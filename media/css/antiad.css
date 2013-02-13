@@ -1,0 +1,37 @@
+.antiad-space {
+    border: 1px dashed #CC0000;
+    border-radius: 5px;
+    background-color: #131313;
+    color: #999;
+    text-shadow: 0 0 10px red;
+}
+
+.top-antiad-space {
+    text-align: center;
+    /*margin-top: 50px;*/
+}
+
+.bottom-antiad-space {
+    clear: both;
+    text-align: center;
+}
+
+.left-antiad-space {
+    float: left;
+    margin-right: 10px;
+    width: 100px;
+    height: 500px;
+}
+
+.left-antiad-space div.aside {
+    width: 500px;
+}
+
+.left-antiad-space div.aside h3 {
+    margin-left: 61px;
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: scale(1) rotate(90deg);
+    -moz-transform-origin: 0 0;
+    -moz-transform: scale(1) rotate(90deg);
+    text-align: center;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>index of dj prawn</title>
+        <link rel="stylesheet" type="text/css" href="/media/css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="/media/css/styles.css" />
+        <link rel="stylesheet" type="text/css" href="/media/css/antiad.css" />
+        <script type="text/javascript" src="/media/js/jquery-1.9.1.min.js" ></script>
+        <script type="text/javascript" src="/media/js/jquery.lazyload.js" ></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $("img.lazy").show().lazyload();
+        });
+        </script>
+        <style type='text/css'>
+        ul.videos {
+            padding: 0;
+            display: inline;
+        }
+        ul.videos li {
+            position: relative;
+            display: inline;
+            clear: none;
+        }
+        ul.videos li div {
+            display: inline-block;
+            /*float: left; clear: none;*/
+        }
+        ul.videos li div h4 {
+            font-size: 12px;
+        }
+/*        ul.videos li img {
+            width: 175px;
+            height: 150px;
+            padding: 5px;
+        }
+*/        .video-list-container {
+            width: 300px;
+
+        }
+        .video-list-container img {
+            width: 216px;
+            height: 162px;
+        }
+        </style>
+    </head>
+    <body>
+       <div id='outer-header'>
+        </div>
+        <div id="outer-container">
+            <div id="inner-container">
+                <div id='inner-header'>
+                    {% include "__components/main_header.html" %}
+                </div>
+                <div class='antiad-space top-antiad-space'>
+                    <div class='aside'>
+                        <h3>antiad space aside</h3>
+                    </div>
+                </div>
+                <div id="content">
+                    <div id="inner-navigation">
+                        <ul>
+                            <li><a href="/rtube/" >Categories</a></li>
+                            <li>Top Rated</li>
+                            <li>Most Viewed</li>
+                            <li><a href="/rtube/random">Random</a></li>
+                        </ul>
+                    </div>
+
+                    <ul class='videos'>
+                        {% for video in videos %}
+                            <li>
+                                <div class="video-list-container">
+                                    <a href="/rtube/details/{{video.id}}"><img class="lazy" src="" data-original="{{video.thumb_url}}" /></a>
+                                    <h4><a href="/rtube/details/{{video.id}}">{{video.title}}</a></h4>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div id="outer-footer">
+                <div class='antiad-space bottom-antiad-space'>
+                    <h3>antiad space footer</h3>
+                </div>
+                {% include "__components/main_footer.html" %}
+            </div>
+        </div>
+    </body>
+
+</html>
